@@ -1,26 +1,204 @@
-@import "tailwindcss";
+@import "tailwindcss";  /* استدعاء مكتبة Tailwind للعمل داخل المشروع */
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
-}
+} */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);  /* تخصيص لون الخلفية */
+  --color-foreground: var(--foreground);  /* تخصيص لون النص */
+  --font-sans: var(--font-geist-sans);    /* تحديد خط sans */
+  --font-mono: var(--font-geist-mono);    /* تحديد خط mono */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0a0a;   /* خلفية الوضع الداكن */
+    --foreground: #ededed;   /* لون النص في الوضع الداكن */
   }
 }
 
-body {
+/* body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+
+/* عامة */
+.layout-body {
+  margin: 0;                 /* إزالة الهوامش */
+  height: 100vh;             /* جعل الصفحة بطول الشاشة */
+  background: #fdfdfd;       /* لون الخلفية */
 }
+
+.app-container {
+  display: flex;             /* جعل العناصر داخلها بجانب بعض */
+  height: 100vh;             /* ملء الصفحة كاملة */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 230px;              /* عرض القائمة الجانبية */
+  background: #0f766e;       /* لون الخلفية */
+  color: #fff;               /* لون النص */
+  padding: 20px;             /* مسافات داخلية */
+  display: flex;             /* تنظيم العناصر عموديًا */
+  flex-direction: column;    /* ترتيب عمودي */
+}
+
+.sidebar-logo {
+  display: flex;             /* ترتيب الشعار والنص */
+  align-items: center;       /* محاذاة عمودية */
+  gap: 10px;                 /* مسافة بين العناصر */
+  font-weight: 700;          /* خط عريض */
+  font-size: 20px;           /* حجم الخط */
+  margin-bottom: 30px;       /* مسافة تحت اللوقو */
+}
+
+.logo-text {
+  color: white;              /* لون نص اللوقو */
+}
+
+.sidebar-menu {
+  list-style: none;          /* إزالة النقاط من القائمة */
+  padding: 0;                /* إزالة حواف */
+  margin: 0;
+}
+
+.sidebar-link {
+  display: flex;             /* الأيقونة مع النص بجانب بعض */
+  align-items: center;
+  gap: 12px;                 /* مسافة بين الأيقونة والنص */
+  padding: 10px 12px;        /* حجم العنصر */
+  text-decoration: none;     /* إزالة خط الروابط */
+  color: white;              /* لون النص */
+  font-size: 16px;           /* حجم النص */
+  border-radius: 999px;      /* تدوير كامل - شكل كبسولة */
+  margin-bottom: 8px;        /* مسافة بين العناصر */
+  transition: 0.2s;          /* حركة ناعمة */
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.18); /* خلفية عند المرور */
+}
+
+.sidebar-link.active {
+  background: white;         /* لون العنصر النشط */
+  color: #0f766e;            /* لون النص للعنصر النشط */
+}
+
+/* أيقونة حبة الدواء */
+.pill-icon {
+  width: 20px;               /* العرض */
+  height: 10px;              /* الارتفاع */
+  border: 2px solid currentColor;   /* حدود بلون النص */
+  border-radius: 999px;      /* شكل كبسولة */
+  position: relative;        /* للسماح بإضافة الخط في المنتصف */
+}
+
+.pill-icon::before {
+  content: "";
+  position: absolute;
+  left: 50%;                 /* منتصف الأيقونة */
+  top: -2px;
+  bottom: -2px;
+  border-left: 2px solid currentColor; /* الخط الذي يقسم الكبسولة */
+}
+
+/* محتوى الصفحة */
+.main-content {
+  flex: 1;                   /* يأخذ المساحة المتبقية */
+  padding: 24px;             /* مسافات داخلية */
+  overflow-y: auto;          /* تمرير رأسي */
+}
+
+/* Header */
+.page-header {
+  margin-bottom: 20px;       /* مسافة أسفل الهيدر */
+}
+
+.page-header h1 {
+  font-size: 28px;           /* حجم عنوان الصفحة */
+  font-weight: 700;          /* خط عريض */
+  margin: 0 0 4px;
+}
+
+.page-header p {
+  margin: 0;
+  color: #555;               /* لون وصف الهيدر */
+}
+
+/* Footer */
+.footer {
+  margin-top: 30px;          /* مسافة فوق الفوتر */
+  padding-top: 10px;
+  border-top: 1px solid #ddd; /* خط علوي */
+  font-size: 14px;           /* حجم النص */
+  color: #666;               /* لون النص */
+  text-align: center;        /* توسيط */
+}
+
+/* كل الهيكل العام */
+.layout-body {
+  margin: 0;
+  height: 100vh;
+  display: flex;             /* تخطيط أفقي بين السايدبار والمحتوى */
+}
+
+.layout-container {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 230px;
+  background: #0f766e;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* المنطقة على اليمين (الصفحة + الفوتر) */
+.content-area {
+  display: flex;
+  flex-direction: column;   /* هيدر + محتوى + فوتر */
+  flex: 1;                  /* تأخذ المساحة المتبقية */
+  height: 100vh;
+}
+
+/* محتوى الصفحة */
+.page-content {
+  flex: 1;                  /* أهم شيء: يجعل المحتوى يتمدد ويثبت الفوتر تحت */
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* الفوتر */
+.footer {
+  padding: 12px 20px;
+  background: #e5e5e5;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #ccc;
+}
+
+
+/* جعل الصفحة في المنتصف */
+.home-wrapper {
+  display: flex;
+  justify-content: center;  /* وسط أفقي */
+  align-items: center;      /* وسط عمودي */
+  height: 100%;             /* ارتفاع كامل */
+  width: 100%;              /* عرض كامل */
+}
+
+.content-area {
+  height: 100vh;            /* لضبط المنطقة اليمنى */
+}
+

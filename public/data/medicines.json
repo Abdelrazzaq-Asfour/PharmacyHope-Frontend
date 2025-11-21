@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Panadol",
+    "description": "Pain relief tablets",
+    "price": 2.5,
+    "quantity": 100,
+    "expiry_date": "2026-12-31"
+  },
+  {
+    "id": 2,
+    "name": "Amoxicillin",
+    "description": "Antibiotic capsules",
+    "price": 4.75,
+    "quantity": 50,
+    "expiry_date": "2025-08-15"
+  },
+  {
+    "id": 3,
+    "name": "Vitamin C",
+    "description": "Immune booster tablets",
+    "price": 1.2,
+    "quantity": 200,
+    "expiry_date": "2027-03-10"
+  }
+]

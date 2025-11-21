@@ -1,0 +1,39 @@
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.styled-table th, 
+.styled-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.styled-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+
+
+
+.search-input {
+  padding: 10px 14px;
+  width: 300px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 3px #0f766e80;
+}
