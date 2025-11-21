@@ -132,4 +132,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+<img width="1880" height="937" alt="image" src="https://github.com/user-attachments/assets/4b2d3ab6-571d-4e86-b71c-7d8507fbe70f" />
+<img width="1926" height="945" alt="image" src="https://github.com/user-attachments/assets/45295b8f-918d-4f04-a304-2d4ba9a15f05" />
+<img width="2015" height="937" alt="image" src="https://github.com/user-attachments/assets/09c5413f-d618-43e3-8a96-dde364add02e" />
+
+
+
+
+
 
